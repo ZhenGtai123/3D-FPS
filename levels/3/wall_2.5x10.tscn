@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsgktneim8smn"]
+
+[ext_resource type="Material" uid="uid://bxkjsopi0igrp" path="res://levels/3/wall_material.tres" id="1_qpcyn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2ubhx"]
+material = ExtResource("1_qpcyn")
+size = Vector3(2.5, 10, 0.3)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pxufc"]
+points = PackedVector3Array(-1.25, -5, -0.15, -1.25, -5, 0.15, -1.25, 5, -0.15, 1.25, -5, -0.15, 1.25, -5, 0.15, -1.25, 5, 0.15, 1.25, 5, -0.15, 1.25, 5, 0.15)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+mesh = SubResource("BoxMesh_2ubhx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("ConvexPolygonShape3D_pxufc")

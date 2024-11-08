@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c85dcwh4woxjo"]
+
+[node name="guidance_base" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Popup" type="Popup" parent="."]
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+
+[node name="MenuBar" type="MenuBar" parent="PopupMenu"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+size = Vector2i(272, 100)
+
+[node name="Label" type="Label" parent="PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 268.0
+offset_bottom = 96.0
+text = "Use 'W', 'A', 'S', 'D' to move around"
+
+[node name="Label2" type="Label" parent="PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 268.0
+offset_bottom = 96.0
+text = "hey hier staat wat"
+
+[node name="Timer" type="Timer" parent="."]

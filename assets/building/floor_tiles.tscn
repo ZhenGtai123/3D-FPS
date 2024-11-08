@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://bgfkbabkiwb78"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2bn5w"]
+resource_name = "grey"
+cull_mode = 2
+albedo_color = Color(0.580392, 0.603922, 0.678431, 1)
+metallic = 0.5
+roughness = 0.0960784
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rodgk"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"format": 4097,
+"index_count": 12,
+"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0),
+"name": "grey",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_atfgb"]
+resource_name = "Mesh"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(246, 122, 29, 194, 246, 122, 33, 66, 246, 122, 29, 194, 246, 122, 25, 194, 246, 122, 29, 66, 246, 122, 33, 66, 246, 122, 29, 66, 246, 122, 25, 194, 246, 122, 29, 66, 246, 122, 33, 66, 246, 122, 29, 194, 246, 122, 25, 194, 246, 122, 29, 194, 246, 122, 33, 66, 246, 122, 29, 66, 246, 122, 25, 194),
+"format": 4119,
+"index_count": 12,
+"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 4, 0, 6, 0, 5, 0, 5, 0, 7, 0, 4, 0),
+"material": SubResource("StandardMaterial3D_2bn5w"),
+"name": "grey",
+"primitive": 3,
+"vertex_count": 8,
+"vertex_data": PackedByteArray(0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 255, 127, 255, 255, 255, 255, 255, 63, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 255, 127, 255, 255, 255, 255, 255, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 255, 127, 255, 255, 255, 255, 255, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 255, 127, 255, 255, 255, 255, 255, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 191, 255, 127, 0, 0, 255, 255, 255, 191, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 255, 127, 0, 0, 255, 255, 255, 191, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 191, 255, 127, 0, 0, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 255, 127, 0, 0, 255, 255, 255, 191)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_rodgk")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ceall"]
+points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trgit"]
+resource_name = "grey"
+cull_mode = 2
+albedo_color = Color(0.580392, 0.603922, 0.678431, 1)
+metallic = 0.5
+roughness = 0.0960784
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_py0ew"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 1e-05, 1),
+"format": 4097,
+"index_count": 12,
+"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0),
+"name": "grey",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6npga"]
+resource_name = "Mesh"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 1e-05, 1),
+"attribute_data": PackedByteArray(246, 122, 157, 193, 246, 122, 165, 65, 246, 122, 157, 193, 246, 122, 149, 193, 246, 122, 157, 65, 246, 122, 165, 65, 246, 122, 157, 65, 246, 122, 149, 193, 246, 122, 157, 65, 246, 122, 165, 65, 246, 122, 157, 193, 246, 122, 149, 193, 246, 122, 157, 193, 246, 122, 165, 65, 246, 122, 157, 65, 246, 122, 149, 193),
+"format": 4119,
+"index_count": 12,
+"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 3, 0, 1, 0, 2, 0, 4, 0, 6, 0, 5, 0, 5, 0, 7, 0, 4, 0),
+"material": SubResource("StandardMaterial3D_trgit"),
+"name": "grey",
+"primitive": 3,
+"vertex_count": 8,
+"vertex_data": PackedByteArray(0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 191, 255, 127, 255, 255, 255, 255, 255, 63, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 63, 255, 127, 255, 255, 255, 255, 255, 63, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 191, 255, 127, 255, 255, 255, 255, 255, 63, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 255, 127, 255, 255, 255, 255, 255, 63, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 191, 255, 127, 0, 0, 255, 255, 255, 191, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 63, 255, 127, 0, 0, 255, 255, 255, 191, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 191, 255, 127, 0, 0, 255, 255, 255, 191, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 255, 127, 0, 0, 255, 255, 255, 191)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_py0ew")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t1bs0"]
+points = PackedVector3Array(0.507937, 0.00793651, 0.507937, -0.507937, -0.00793651, -0.507937, -0.507937, 0.00793651, -0.507937, 0.507937, -0.00793651, -0.507937, -0.507937, -0.00793651, 0.507937, -0.507937, 0.00793651, 0.507937, 0.507937, 0.00793651, -0.507937, 0.507937, -0.00793651, 0.507937)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="floor-large" type="Node3D" parent="."]
+
+[node name="floor-large" type="MeshInstance3D" parent="floor-large"]
+mesh = SubResource("ArrayMesh_atfgb")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor-large/floor-large"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor-large/floor-large/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ceall")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="floor-large"]
+
+[node name="floor" type="Node3D" parent="."]
+
+[node name="floor" type="MeshInstance3D" parent="floor"]
+mesh = SubResource("ArrayMesh_6npga")
+skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="floor"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_t1bs0")

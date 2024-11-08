@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://com3s2fm60vh6"
+path="res://.godot/imported/uziLong.obj-00a8913bb469ea0d65c222b4dbe9f256.mesh"
+
+[deps]
+
+files=["res://.godot/imported/uziLong.obj-00a8913bb469ea0d65c222b4dbe9f256.mesh"]
+
+source_file="res://assets/tools/weapon/uziLong.obj"
+dest_files=["res://.godot/imported/uziLong.obj-00a8913bb469ea0d65c222b4dbe9f256.mesh", "res://.godot/imported/uziLong.obj-00a8913bb469ea0d65c222b4dbe9f256.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

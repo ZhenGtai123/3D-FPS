@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnrunckbl5ep7"]
+
+[ext_resource type="Script" path="res://ui/guidance/guidance_health/health_popup.gd" id="1_60f2j"]
+[ext_resource type="Script" path="res://ui/guidance/guidance_health/guidance_health.gd" id="1_yn6np"]
+
+[node name="guidance_health" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_yn6np")
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+handle_input_locally = false
+gui_disable_input = true
+size = Vector2i(364, 86)
+mouse_passthrough = true
+script = ExtResource("1_60f2j")
+
+[node name="Label" type="Label" parent="PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 360.0
+offset_bottom = 82.0
+text = "You have been hit by an enemy.
+Keep track of your health using the healthbar.
+Pick up health packs, to restore your health."
+
+[node name="Timer" type="Timer" parent="PopupPanel"]
+
+[connection signal="popup_hide" from="PopupPanel" to="PopupPanel" method="_on_popup_hide"]
+[connection signal="timeout" from="PopupPanel/Timer" to="PopupPanel" method="_on_timer_timeout"]

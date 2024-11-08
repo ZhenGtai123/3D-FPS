@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhw3xcerdvaq4"]
+
+[ext_resource type="PackedScene" uid="uid://kwrg4g71ppjc" path="res://ui/menu_base.tscn" id="1_x46a7"]
+[ext_resource type="Script" path="res://ui/menu_lost.gd" id="2_wu0ak"]
+[ext_resource type="AudioStream" uid="uid://b8tfgw0bhd5bo" path="res://assets/tools/sound/wahwahwahwaaaahahahahahaha-94669.mp3" id="3_sh1e2"]
+
+[node name="MenuLost" instance=ExtResource("1_x46a7")]
+script = ExtResource("2_wu0ak")
+
+[node name="Message" parent="." index="1"]
+offset_bottom = -68.745
+text = "Game over
+Try again?"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource("3_sh1e2")

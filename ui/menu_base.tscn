@@ -1,0 +1,134 @@
+[gd_scene load_steps=6 format=3 uid="uid://kwrg4g71ppjc"]
+
+[ext_resource type="Script" path="res://ui/menu_base.gd" id="1_t1ndt"]
+[ext_resource type="PackedScene" uid="uid://ctahsvj88g1om" path="res://levels/node_3d.tscn" id="2_nahtv"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wx8b1"]
+
+[sub_resource type="Theme" id="Theme_ncqss"]
+
+[sub_resource type="Theme" id="Theme_5ng2i"]
+
+[node name="MenuBase" type="Control"]
+material = SubResource("CanvasItemMaterial_wx8b1")
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 645.0
+mouse_filter = 1
+theme = SubResource("Theme_ncqss")
+script = ExtResource("1_t1ndt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+visibility_layer = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.313726, 0.313726, 0, 1)
+
+[node name="Message" type="Label" parent="."]
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.079
+anchor_right = 1.0
+anchor_bottom = 0.381
+offset_top = 0.0449982
+offset_bottom = 0.25499
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 37
+text = "Replace this text in derived scenes"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Keys" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.248
+anchor_top = 0.4
+anchor_right = 0.736
+anchor_bottom = 0.617
+offset_left = 0.0559998
+offset_top = -55.0
+offset_right = 0.392029
+offset_bottom = 38.035
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 37
+text = "Press n to restart, q to quit or press a button
+p pauses and continues the game"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.068
+anchor_top = 0.721
+anchor_right = 0.41
+anchor_bottom = 0.867
+offset_left = -0.404007
+offset_top = -0.0450134
+offset_right = 0.269958
+offset_bottom = -0.215027
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = SubResource("Theme_5ng2i")
+theme_override_colors/icon_normal_color = Color(0.313726, 0.313726, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.196078, 0.196078, 0, 1)
+theme_override_font_sizes/font_size = 54
+action_mode = 0
+text = "start"
+
+[node name="ColorRect" type="ColorRect" parent="Start"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 1, 0, 1)
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.574
+anchor_top = 0.721
+anchor_right = 0.905
+anchor_bottom = 0.867
+offset_left = 0.177979
+offset_top = -0.0450134
+offset_right = 0.534912
+offset_bottom = -0.215027
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 54
+action_mode = 0
+text = "quit"
+
+[node name="ColorRect" type="ColorRect" parent="Quit"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Node3d" parent="Node3D" instance=ExtResource("2_nahtv")]

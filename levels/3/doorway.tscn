@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3v4krqi41323"]
+
+[ext_resource type="PackedScene" uid="uid://bsgktneim8smn" path="res://levels/3/wall_2.5x10.tscn" id="1_4wtam"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" parent="." instance=ExtResource("1_4wtam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 0, 0)
+
+[node name="StaticBody3D2" parent="." instance=ExtResource("1_4wtam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0, 0)

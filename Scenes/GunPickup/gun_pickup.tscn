@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://s20713aqqaon"]
+
+[ext_resource type="Script" path="res://Scenes/GunPickup/gun_pickup.gd" id="1_jcvk3"]
+[ext_resource type="PackedScene" uid="uid://dwng1fbdwvx4o" path="res://assets/gun_1.tscn" id="2_kcgy7"]
+[ext_resource type="Script" path="res://Scenes/GunPickup/gun_rotation.gd" id="3_t4evc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eru1m"]
+
+[node name="gun_pickup" type="Node3D"]
+script = ExtResource("1_jcvk3")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_eru1m")
+
+[node name="gun1" parent="." instance=ExtResource("2_kcgy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.297515)
+script = ExtResource("3_t4evc")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

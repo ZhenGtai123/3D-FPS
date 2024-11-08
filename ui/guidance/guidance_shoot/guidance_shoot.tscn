@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkqlpdhfv6hqn"]
+
+[ext_resource type="Script" path="res://ui/guidance/guidance_shoot/shoot_popup.gd" id="1_1v0r2"]
+[ext_resource type="Script" path="res://ui/guidance/guidance_shoot/guidance_shoot.gd" id="1_a0w51"]
+
+[node name="guidance_shoot" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_a0w51")
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+handle_input_locally = false
+gui_disable_input = true
+size = Vector2i(480, 60)
+mouse_passthrough = true
+script = ExtResource("1_1v0r2")
+
+[node name="Label" type="Label" parent="PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 476.0
+offset_bottom = 82.0
+text = "Use 'Left Mouse Button' to shoot your gun.
+Try to aim the crosshair at an enemy, by moving your mouse.
+Kill all enemies to progress to the next level."
+
+[node name="Timer" type="Timer" parent="PopupPanel"]
+
+[connection signal="popup_hide" from="PopupPanel" to="PopupPanel" method="_on_popup_hide"]
+[connection signal="timeout" from="PopupPanel/Timer" to="PopupPanel" method="_on_timer_timeout"]

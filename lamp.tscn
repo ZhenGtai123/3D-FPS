@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://b126mg1rnclre"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5h5yo"]
+albedo_color = Color(0.313726, 0.34902, 0.458824, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5by5"]
+albedo_color = Color(0.835294, 1, 1, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(1.5, 0.1, 0.4)
+material = SubResource("StandardMaterial3D_5h5yo")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07, 0)
+size = Vector3(1.3, 0.1, 0.3)
+material = SubResource("StandardMaterial3D_c5by5")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.352952, -0.152654, 0)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.332, -0.153, 0)

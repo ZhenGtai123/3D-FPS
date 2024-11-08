@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7x3s73hh2a2m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_buyaa"]
+albedo_color = Color(0.678431, 0.847059, 0.901961, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dafil"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="back of button" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(0.2, 0.2, 0.05)
+material = SubResource("StandardMaterial3D_buyaa")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+radius = 0.05
+height = 0.1
+sides = 40
+material = SubResource("StandardMaterial3D_dafil")

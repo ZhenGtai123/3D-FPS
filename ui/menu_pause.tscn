@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://0iv3lwl2bvt"]
+
+[ext_resource type="PackedScene" uid="uid://kwrg4g71ppjc" path="res://ui/menu_base.tscn" id="1_ucbtu"]
+[ext_resource type="Script" path="res://ui/menu_pause.gd" id="2_yqsp1"]
+
+[sub_resource type="Theme" id="Theme_5ng2i"]
+
+[node name="PauseMenu" instance=ExtResource("1_ucbtu")]
+process_mode = 3
+script = ExtResource("2_yqsp1")
+
+[node name="Message" parent="." index="1"]
+text = "The game is paused."
+
+[node name="Start" parent="." index="3"]
+anchor_right = 0.303
+offset_right = -0.359009
+text = "restart"
+
+[node name="Quit" parent="." index="4"]
+anchor_left = 0.698
+offset_left = 0.205994
+offset_right = 0.535034
+
+[node name="Unpause" type="Button" parent="." index="5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.369
+anchor_top = 0.721
+anchor_right = 0.623
+anchor_bottom = 0.867
+offset_left = 0.542969
+offset_top = -0.0450134
+offset_right = -0.319031
+offset_bottom = -0.215027
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5ng2i")
+theme_override_colors/icon_normal_color = Color(0.313726, 0.313726, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.196078, 0.196078, 0, 1)
+theme_override_font_sizes/font_size = 54
+text = "unpause"
+
+[node name="ColorRect" type="ColorRect" parent="Unpause" index="0"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 1, 1)
+
+[node name="Node3D" parent="." index="6"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+
+[node name="Node3d" parent="Node3D" index="0"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 19.9099, 44186.5, -6.17808)

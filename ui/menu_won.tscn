@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://7s83f2d8yrn6"]
+
+[ext_resource type="PackedScene" uid="uid://kwrg4g71ppjc" path="res://ui/menu_base.tscn" id="1_4sau3"]
+[ext_resource type="Script" path="res://ui/menu_won.gd" id="2_cfyry"]
+[ext_resource type="AudioStream" uid="uid://jyl2hv0pmmgh" path="res://assets/tools/sound/success-fanfare-trumpets-6185.mp3" id="3_iemrs"]
+
+[node name="WonMenu" instance=ExtResource("1_4sau3")]
+script = ExtResource("2_cfyry")
+
+[node name="Message" parent="." index="1"]
+text = "You won!
+Restart?"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource("3_iemrs")

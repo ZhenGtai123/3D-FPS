@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://didj1jd25r0uc"]
+
+[ext_resource type="PackedScene" uid="uid://ceonk4icwlw2a" path="res://Scenes/player.tscn" id="1_paotn"]
+[ext_resource type="PackedScene" uid="uid://s20713aqqaon" path="res://Scenes/GunPickup/gun_pickup.tscn" id="2_5lx0o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aom5k"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fsj16"]
+albedo_color = Color(0.478431, 0.478431, 0.478431, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_30fnd"]
+material = SubResource("StandardMaterial3D_fsj16")
+size = Vector3(20, 1, 20)
+
+[node name="test" type="Node3D"]
+
+[node name="StaticBody3D - floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D - floor"]
+shape = SubResource("BoxShape3D_aom5k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D - floor"]
+mesh = SubResource("BoxMesh_30fnd")
+
+[node name="gun_pickup" parent="." instance=ExtResource("2_5lx0o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42408, 5.04763)
+
+[node name="player" parent="." instance=ExtResource("1_paotn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.788461, 1.55457, 2.49786)

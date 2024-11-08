@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4f4a1vxsb1re"]
+
+[ext_resource type="MeshLibrary" uid="uid://barx7lokb1qxg" path="res://assets/box_tiles.tres" id="1_ukf3g"]
+[ext_resource type="MeshLibrary" uid="uid://bvjlkmngked8b" path="res://assets/conveyor_tiles.tres" id="2_wgrnt"]
+[ext_resource type="MeshLibrary" uid="uid://ccihduyyynm0p" path="res://assets/cover_tiles.tres" id="3_tf105"]
+[ext_resource type="MeshLibrary" uid="uid://bmys2mn6ciufm" path="res://assets/door_tiles.tres" id="4_uotfc"]
+[ext_resource type="MeshLibrary" uid="uid://fgen8csm6tje" path="res://assets/floor_tiles.tres" id="5_48ffy"]
+[ext_resource type="MeshLibrary" uid="uid://ckmq2fci0168e" path="res://assets/strucuture_tiles.tres" id="6_367u0"]
+[ext_resource type="MeshLibrary" uid="uid://dlfv2j8vnk1q4" path="res://assets/top_tiles.tres" id="7_a1j8r"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_22ooe"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GridMap (boxes)" type="GridMap" parent="."]
+mesh_library = ExtResource("1_ukf3g")
+metadata/_editor_floor_ = Vector3(0, -5, 0)
+
+[node name="GridMap (converyor)" type="GridMap" parent="."]
+mesh_library = ExtResource("2_wgrnt")
+
+[node name="GridMap (cover)" type="GridMap" parent="."]
+mesh_library = ExtResource("3_tf105")
+
+[node name="GridMap (door)" type="GridMap" parent="."]
+mesh_library = ExtResource("4_uotfc")
+
+[node name="GridMap (floor)" type="GridMap" parent="."]
+mesh_library = ExtResource("5_48ffy")
+data = {
+"cells": PackedInt32Array(0, 0, 0, 1, 0, 0, 65535, 0, 0)
+}
+
+[node name="GridMap (structure)" type="GridMap" parent="."]
+mesh_library = ExtResource("6_367u0")
+
+[node name="GridMap (top)" type="GridMap" parent="."]
+mesh_library = ExtResource("7_a1j8r")
+metadata/_editor_floor_ = Vector3(0, -4, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3481, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0143356, -0.970099, 0)
+mesh = SubResource("CapsuleMesh_22ooe")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85561, 0)

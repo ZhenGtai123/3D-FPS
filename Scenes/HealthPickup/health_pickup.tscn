@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj703w1veaw6u"]
+
+[ext_resource type="Script" path="res://Scenes/HealthPickup/health_pickup.gd" id="1_36jwq"]
+[ext_resource type="ArrayMesh" uid="uid://c4m1iacgvas4s" path="res://assets/tools/health/HealthBag.obj" id="2_jn0aq"]
+[ext_resource type="Script" path="res://Scenes/HealthPickup/health_rotation.gd" id="3_xow7k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_blm3t"]
+
+[node name="health_pickup" type="Node3D"]
+script = ExtResource("1_36jwq")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = ExtResource("2_jn0aq")
+script = ExtResource("3_xow7k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_blm3t")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

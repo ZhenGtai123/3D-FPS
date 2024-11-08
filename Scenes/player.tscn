@@ -1,0 +1,104 @@
+[gd_scene load_steps=13 format=3 uid="uid://ceonk4icwlw2a"]
+
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_d0u4y"]
+[ext_resource type="PackedScene" uid="uid://dwng1fbdwvx4o" path="res://assets/gun_1.tscn" id="2_7kpa2"]
+[ext_resource type="Texture2D" uid="uid://bx4urv36nj45o" path="res://assets/crosshair003.png" id="3_u1m8j"]
+[ext_resource type="AudioStream" uid="uid://cum1kota3bqee" path="res://assets/tools/sound/single-gunshot-62-hp-37188.mp3" id="4_kj2u8"]
+[ext_resource type="AudioStream" uid="uid://dnqjy625q5dv7" path="res://assets/tools/sound/1911-reload-6248.mp3" id="5_71a4s"]
+[ext_resource type="AudioStream" uid="uid://ds8yllnyhlnt0" path="res://assets/tools/sound/swing-whoosh-110410.mp3" id="6_4rr5n"]
+[ext_resource type="AudioStream" uid="uid://canco6lejo44v" path="res://assets/tools/sound/ouch.mp3" id="7_m31p3"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hde18"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_06rhl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6acd7"]
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_poa7c"]
+bg_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_85u8w"]
+font_size = 25
+
+[node name="player" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 5
+script = ExtResource("1_d0u4y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_hde18")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_06rhl")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+
+[node name="gun1" parent="head/Camera3D" instance=ExtResource("2_7kpa2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.538, -1.353)
+
+[node name="RayCast3D" type="RayCast3D" parent="head/Camera3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(60, 0, 0)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="HealthBar" type="ProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 597.0
+offset_right = 167.0
+offset_bottom = 624.0
+scale = Vector2(1.49661, 1.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_6acd7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_poa7c")
+value = 100.0
+
+[node name="Crosshair" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_u1m8j")
+
+[node name="ammo_text" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 962.0
+offset_top = 597.0
+offset_right = 1141.0
+offset_bottom = 651.0
+scale = Vector2(0.995096, 1)
+text = "Ammo: "
+label_settings = SubResource("LabelSettings_85u8w")
+
+[node name="shooting_sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_kj2u8")
+volume_db = -30.0
+pitch_scale = 5.0
+
+[node name="reload_sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_71a4s")
+volume_db = -15.0
+
+[node name="jump_sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_4rr5n")
+
+[node name="hit" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_m31p3")
+volume_db = -30.0

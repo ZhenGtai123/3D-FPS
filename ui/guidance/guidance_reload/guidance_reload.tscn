@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0g4qydytiotk"]
+
+[ext_resource type="Script" path="res://ui/guidance/guidance_reload/reload_popup.gd" id="1_0q0r4"]
+[ext_resource type="Script" path="res://ui/guidance/guidance_reload/guidance_reload.gd" id="1_6vudc"]
+
+[node name="guidance_reload" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6vudc")
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+handle_input_locally = false
+gui_disable_input = true
+size = Vector2i(441, 86)
+mouse_passthrough = true
+script = ExtResource("1_0q0r4")
+
+[node name="Label" type="Label" parent="PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 437.0
+offset_bottom = 82.0
+text = "You have run out of bullets in the current clip.
+To use the next clip, press 'R', this will reload the gun.
+Pick up guns / ammo, to restock your amount of bullets."
+
+[node name="Timer" type="Timer" parent="PopupPanel"]
+
+[connection signal="popup_hide" from="PopupPanel" to="PopupPanel" method="_on_popup_hide"]
+[connection signal="timeout" from="PopupPanel/Timer" to="PopupPanel" method="_on_timer_timeout"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dqa53hsjm5lvn"
+path="res://.godot/imported/HealthBag_04size.obj-628cc147672ee57fe07921cecb3fb542.mesh"
+
+[deps]
+
+files=["res://.godot/imported/HealthBag_04size.obj-628cc147672ee57fe07921cecb3fb542.mesh"]
+
+source_file="res://assets/tools/health/HealthBag_04size.obj"
+dest_files=["res://.godot/imported/HealthBag_04size.obj-628cc147672ee57fe07921cecb3fb542.mesh", "res://.godot/imported/HealthBag_04size.obj-628cc147672ee57fe07921cecb3fb542.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
